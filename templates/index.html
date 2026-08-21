@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelGuideAI -Local</title>
+</head>
+<body style="font-family: sans-serif; padding: 20px;">
+    <h2>TravelGuideAI</h2>
+    <form method="POST">
+        <label>Pilih Kota:</label>
+        <input type="text" name="city" placeholder="tokyo atau bali" required>
+    </form>
+
+    {% if result %}
+        <h3>Hasil Rekomendasi AI</h3>
+        <p>{{ result }}</p>
+        <hr>
+        <small><b>Data Context (Simulasi S3 Knowledge Base)</b> {{ context }}</small>
+    {% endif %}
+</body>
+</html>
