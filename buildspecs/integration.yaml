@@ -1,16 +1,13 @@
 version: 0.2
 
+env:
+  variables:
+    GEMINI_API_KEY: "TEST_DUMMY_KEY"
+
 phases:
   install:
-    runtime-versions:
-      python: 3.11
     commands:
       - pip install -r requirements.txt
-
   build:
     commands:
       - pytest
-
-artifacts:
-  files:
-    - '**/*'      #Membungkus semua file kode untuk di kirim ke CodeDeploy

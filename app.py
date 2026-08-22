@@ -5,7 +5,7 @@ from google import genai
 app = Flask (__name__)
 
 # Menggunakan gemini API sebagai pengganti dari AWS Bedrock
-client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY") or "dummy_key_for_testing")
 
 # Simulasi fungsi S3 Knowledge Base (Membaca file dari folder riviews)
 def read_lokal_reviews(city_name):
