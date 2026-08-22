@@ -4,12 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelGuideAI -Local</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-image: url("{{ url_for('static', filename='view.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-shadow: none;
+            color: white;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        button {
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: 1px solid  whitesmoke;
+            background-color: black;
+            cursor: pointer;
+            margin-left: 10px;
+            color: white;
+        }
+
+        button:hover {
+            background-color: crimson;
+        }
+    </style>
 </head>
-<body style="font-family: sans-serif; padding: 20px;">
     <h2>TravelGuideAI</h2>
     <form method="POST">
         <label>Pilih Kota:</label>
-        <input type="text" name="city" placeholder="tokyo atau bali" required>
+        
+        <select name="city" >
+            <option value="disabled diselect">pilih salah satu</option>
+            <option value="tokyo">Tokyo</option>
+            <option value="bali">Bali</option>
+        </select>
+       <button type="submit">Cari</button>
     </form>
 
     {% if result %}
