@@ -1,11 +1,18 @@
 import os
 from flask import Flask, render_template, request
 from google import genai
+import markdown
+from opentelemetry import trace
+from opentelemetry.sdk.trace import TracerProvider
+from dotenv import load_dotenv
 
 app = Flask (__name__)
+load_dotenv()
 
 # Menggunakan gemini API sebagai pengganti dari AWS Bedrock
-client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY") or "dummy_key_for_testing")
+client = genai.Client (
+    api_key=os.environ.get("GEMINI_API_KEY")
+)
 
 # Simulasi fungsi S3 Knowledge Base (Membaca file dari folder riviews)
 def read_lokal_reviews(city_name):
@@ -26,13 +33,16 @@ def home():
         prompt = f"Berdasarkan ulasan berikut: '{context}, berikut panduan wisata singkat untuk kota '{city}."
 
         response = client.models.generate_content(
-            model='gemini-3.6-flash',
+            model='models/gemini-3.1-flash-lite',
             contents=prompt
         )
-        result = response.text
+        raw_text = response.text
+
+        # Mengubah text markdown dari ai menjadi format html murni
+        result = markdown.markdown(raw_text)
 
     # Memanggil file yang ada di folder templates
     return render_template("index.html", result=result, context=context)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(host='0.0.0.0', debug=True, port=5000)
