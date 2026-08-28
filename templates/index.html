@@ -67,20 +67,11 @@
     </div>
 
     <script>
-    if (!sessionStorage.getItem("splashShown")) {
-        setTimeout(function () {
-            document
-                .getElementById("splash-screen")
-                .classList.add("hidden");
-            sessionStorage.setItem("splashShown", "true");
-        }, 4000);
-
-    } else {
-
+    setTimeout(function () {
         document
             .getElementById("splash-screen")
             .classList.add("hidden");
-    }
+    }, 4000);
 </script>
 </body>
 </html>
