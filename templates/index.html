@@ -4,123 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelGuideAI-Local</title>
-    <style>
-        body {
-                font-family: sans-serif;
-                margin: 0;
-                padding: 20px;
-                background-image: url("{{ url_for('static', filename='view.jpg') }}");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-position: center;
-                color: white;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-                height: 100vh;
-                overflow: hidden;         
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start; 
-                box-sizing: border-box;   
-        }
 
-        .content-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            width: 100%;
-            max-width: 650px;
-            height: 90vh; 
-            box-sizing: border-box;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-            font-size: 2.5rem;
-            flex-shrink: 0; /* biar engga nyusut */
-        }
-
-        form {
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            border-radius: 12px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            text-shadow: none;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-shrink: 0; 
-        }
-
-        label {
-            font-weight: bold;
-        }
-
-        select {
-            padding: 8px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            outline: none;
-        }
-        
-        button {
-            padding: 8px 15px;
-            border-radius: 5px;
-            border: 1px solid whitesmoke;
-            background-color: black;
-            cursor: pointer;
-            color: white;
-        }
-
-        button:hover {
-            background-color: crimson;
-        }
-
-        .result-box {
-            margin-top: 25px;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: left;
-            width: 100%;
-            flex: 1;
-            overflow: auto; /* untuk bisa di scroll kalau text panjang */
-            backdrop-filter: blur(5px);
-            border: 1px solid black;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
+    <!-- SPLASH SCREEN-->
+    <div id="splash-screen">
+
+        <div class="plane">✈️</div>
+
+        <img
+            class="splash-logo"
+            src="{{ url_for('static', filename='images/globe.png') }}"
+            alt="TravelGuideAI"
+        >
+
+        <h1>TravelGuideAI</h1>
+
+    </div>
+
+
+    <!-- HALAMAN UTAMA -->
     <div class="content-container">
+
         <h2>Travel Guide AI</h2>
-        
+
         <form method="POST">
+
             <label>Pilih Kota:</label>
-            <select name="city">
-                <option value="" disabled selected>pilih salah satu</option>
+
+            <select name="city" required>
+                <option value="" disabled selected>
+                    pilih salah satu
+                </option>
+
                 <option value="bandung">Bandung</option>
                 <option value="bali">Bali</option>
                 <option value="yogyakarta">Yogyakarta</option>
                 <option value="semarang">Semarang</option>
                 <option value="surabaya">Surabaya</option>
             </select>
+
             <button type="submit">Search</button>
+
         </form>
 
         {% if result %}
-            <div class="result-box">
-                <h3>Hasil Rekomendasi AI</h3>
-                <div>{{ result | safe }}</div>
-                <hr style="border: 0.5px solid rgba(255,255,255,0.3);">
-                <small><b>Data Context (Simulasi S3 Knowledge Base):</b> {{ context }}</small>
-            </div>
+        <div class="result-box">
+            <h3>Hasil Rekomendasi AI</h3>
+            <div>{{ result | safe }}</div>
+
+            <hr>
+
+            <small>
+                <b>Data Context (Simulasi S3 Knowledge Base):</b>
+                {{ context }}
+            </small>
+        </div>
         {% endif %}
+
     </div>
 
+    <script>
+    if (!sessionStorage.getItem("splashShown")) {
+        setTimeout(function () {
+            document
+                .getElementById("splash-screen")
+                .classList.add("hidden");
+            sessionStorage.setItem("splashShown", "true");
+        }, 4000);
+
+    } else {
+
+        document
+            .getElementById("splash-screen")
+            .classList.add("hidden");
+    }
+</script>
 </body>
 </html>

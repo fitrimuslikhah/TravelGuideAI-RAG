@@ -1,0 +1,363 @@
+/* =========================================================
+                    SPLASH SCREEN
+   ========================================================= */
+
+#splash-screen {
+    position: fixed;
+    inset: 0;
+
+    background: linear-gradient(135deg, #456274, #355663);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+
+    transition: opacity 1s ease;
+}
+
+
+/* Splash menghilang */
+#splash-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+                    SPLASH IMAGE
+   ========================================================= */
+
+.splash-logo {
+    width: 450px;
+    height: 350px;
+
+    object-fit: contain;
+
+    /* Globe berputar selama 3 detik */
+    animation: globeRotate 3s linear forwards;
+}
+
+
+/* =========================================================
+                    PESAWAT EMOJI
+   ========================================================= */
+
+.plane {
+    position: absolute;
+
+    top: 30%;
+    left: -100px;
+
+    font-size: 50px;
+
+    z-index: 10;
+
+    /* Pesawat terbang selama 3 detik */
+    animation: flyPlane 3s ease-in-out forwards;
+}
+
+
+/* =========================================================
+                    SPLASH TITLE
+   ========================================================= */
+
+#splash-screen h1 {
+    margin-top: 20px;
+
+    font-size: 2rem;
+
+    color: #d6e0e7;
+
+    text-shadow: none;
+
+    animation: textFade 1.5s ease;
+}
+
+
+/* =========================================================
+                    GLOBE ANIMATION
+   ========================================================= */
+
+@keyframes globeRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+                    PLANE ANIMATION
+   ========================================================= */
+
+@keyframes flyPlane {
+
+    0% {
+        left: -100px;
+        top: 35%;
+
+        transform: rotate(10deg);
+    }
+
+    50% {
+        left: 45%;
+        top: 25%;
+
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        left: calc(100% + 100px);
+        top: 15%;
+
+        transform: rotate(5deg);
+    }
+}
+
+
+/* =========================================================
+                    TEXT ANIMATION
+   ========================================================= */
+
+@keyframes textFade {
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+                    MAIN PAGE
+   ========================================================= */
+
+body {
+    font-family: sans-serif;
+
+    margin: 0;
+    padding: 20px;
+
+    /* Background halaman utama */
+    background-image: url("../images/view.jpg");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+    color: white;
+
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+
+    height: 100vh;
+
+    /* Supaya seluruh halaman tidak ikut scroll */
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+                    CONTENT
+   ========================================================= */
+
+.content-container {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    width: 100%;
+
+    max-width: 650px;
+
+    height: 90vh;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+                    MAIN TITLE
+   ========================================================= */
+
+h2 {
+    margin-bottom: 20px;
+
+    font-size: 2.5rem;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+                    SEARCH FORM
+   ========================================================= */
+
+form {
+    background-color: rgba(255, 255, 255, 0.2);
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    backdrop-filter: blur(5px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    text-shadow: none;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+                    FORM LABEL
+   ========================================================= */
+
+label {
+    font-weight: bold;
+}
+
+
+/* =========================================================
+                    CITY SELECT
+   ========================================================= */
+
+select {
+    padding: 8px;
+
+    border-radius: 5px;
+
+    border: 1px solid #ccc;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+                    SEARCH BUTTON
+   ========================================================= */
+
+button {
+    padding: 8px 15px;
+
+    border-radius: 5px;
+
+    border: 1px solid whitesmoke;
+
+    background-color: black;
+
+    cursor: pointer;
+
+    color: white;
+}
+
+
+/* Saat cursor diarahkan ke tombol */
+button:hover {
+    background-color: crimson;
+}
+
+
+/* =========================================================
+                    RESULT BOX
+   ========================================================= */
+
+.result-box {
+    margin-top: 25px;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    text-align: left;
+
+    width: 100%;
+
+    flex: 1;
+
+    /*
+    Supaya result-box bisa mengecil
+    dan isinya bisa di-scroll.
+    */
+    min-height: 0;
+
+    /*
+    isi result-box yang scroll.
+    */
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    backdrop-filter: blur(5px);
+
+    border: 1px solid black;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+                    RESULT BOX SCROLLBAR
+   ========================================================= */
+
+.result-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.result-box::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+
+    border-radius: 10px;
+}
+
+.result-box::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+/* =========================================================
+                    RESULT DIVIDER
+   ========================================================= */
+
+.result-box hr {
+    border: 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+
+    margin: 15px 0;
+}
