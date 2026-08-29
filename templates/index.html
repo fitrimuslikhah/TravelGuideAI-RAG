@@ -3,75 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelGuideAI-Local</title>
-
+    <title>TravelGuideAI</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-    <!-- SPLASH SCREEN-->
-    <div id="splash-screen">
-
-        <div class="plane">✈️</div>
-
-        <img
-            class="splash-logo"
-            src="{{ url_for('static', filename='images/globe.png') }}"
-            alt="TravelGuideAI"
-        >
-
-        <h1>TravelGuideAI</h1>
-
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="navbar-logo">
+        🌍 Travel Guide AI
     </div>
 
+    <div class="navbar-menu">
+        <a href="#home">Home</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#accommodations">Accommodations</a>
+        <a href="#food">Food</a>
+    </div>
+</nav>
 
-    <!-- HALAMAN UTAMA -->
-    <div class="content-container">
+<!-- Splash Screen -->
+<div id="splash-screen">
+    <div class="plane">✈️</div>
+    <img
+        class="splash-logo"
+        src="{{ url_for('static', filename='images/globe.png') }}"
+        alt="TravelGuideAI"
+    >
+    <h1>Travel Guide AI</h1>
+</div>
 
-        <h2>Travel Guide AI</h2>
+<!-- HOME -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <p class="hero-small-title">AI TRAVEL GUIDE</p>
+        <h1>Your Journey Start Here<br></h1>
 
-        <form method="POST">
+        <p class="hero-description">Got a trip in mind? Tell us where, and let AI plan the vibes</p>
 
-            <label>Pilih Kota:</label>
-
-            <select name="city" required>
-                <option value="" disabled selected>
-                    pilih salah satu
-                </option>
-
+<!-- SEARCH AI -->
+<form method="POST" class="search-form">
+    <select name="city" required>
+        <option value="" disabled selected>Where to next?</option>
                 <option value="bandung">Bandung</option>
                 <option value="bali">Bali</option>
                 <option value="yogyakarta">Yogyakarta</option>
                 <option value="semarang">Semarang</option>
                 <option value="surabaya">Surabaya</option>
-            </select>
+    </select>
 
-            <button type="submit">Search</button>
+            <button type="submit">Explore with AI </button>
 
         </form>
+    </div>
+</section>
 
-        {% if result %}
-        <div class="result-box">
-            <h3>Hasil Rekomendasi AI</h3>
-            <div>{{ result | safe }}</div>
+<!--Popular Destinations-->
+<section id="destinations" class="section">
 
-            <hr>
-
-            <small>
-                <b>Data Context (Simulasi S3 Knowledge Base):</b>
-                {{ context }}
-            </small>
-        </div>
-        {% endif %}
-
+    <div class="section-header">
+        <p>EXPLORE</p>
+        <h2>Popular Destinations</h2>
+        <span>Find your next favorite spot in Indonesia</span>
     </div>
 
+    <div class="destination-grid">
+
+        <a href="/destination/bandung" class="destination-card">
+    <img src="{{ url_for('static', filename='images/bandung.jpg') }}" alt="Bandung">
+    <div>
+        <h3>Bandung</h3>
+        <p>West Java, Indonesia</p>
+    </div>
+    </a>
+
+        <a href="/destination/bali" class="destination-card">
+            <img src="{{ url_for('static', filename='images/bali.jpg') }}" alt="Bali">
+
+            <div>
+                <h3>Bali</h3>
+                <p>Indonesia</p>
+            </div>
+        </a>
+        <a href="/destination/yogyakarta" class="destination-card">
+            <img src="{{ url_for('static', filename='images/yogyakarta.jpg') }}" alt="Yogyakarta">
+
+            <div>
+                <h3>Yogyakarta</h3>
+                <p>Central Java</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- ACCOMMODATIONS -->
+<section id="accommodations" class="accommodations-section">
+
+    <div class="section-header">
+        <p>FIND YOUR STAY</p>
+        <h2>Where Do You Want to Stay?</h2>
+        <span>Find a stay that matches your vibe</span>
+    </div>
+
+    <div class="accommodation-grid">
+
+        <!-- BUDGET -->
+        <div class="accommodation-card">
+            <div class="accommodation-icon">🏨</div>
+            <h3>Budget Stay</h3>
+            <p>Comfy stays without breaking the bank</p>
+        </div>
+
+        <!-- LOCAL -->
+        <div class="accommodation-card">
+            <div class="accommodation-icon">🏡</div>
+            <h3>Local Experience</h3>
+            <p>Live like a local and catch the real local vibes</p>
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="accommodation-card">
+            <div class="accommodation-icon">✨</div>
+            <h3>Premium Stay</h3>
+            <p>A little luxury, a lot of good vibes</p>
+        </div>
+    </div>
+</section>
+
+<!--Food-->
+    <section id="food" class="food-section">
+
+    <div class="section-header">
+        <p>TASTE INDONESIA</p>
+        <h2>Local Food</h2>
+        <span>Discover local eats and flavors worth the trip</span>
+    </div>
+
+    <div class="food-grid">
+        <div class="food-card">
+            <div class="food-icon">🍜</div>
+            <h3>Indonesian Food</h3>
+            <p>Get ready for iconic eats and seriously good local flavors</p>
+        </div>
+
+        <div class="food-card">
+            <div class="food-icon">🍛</div>
+            <h3>Local Cuisine</h3>
+            <p>Find the must try local eats wherever you go</p>
+        </div>
+
+        <div class="food-card">
+            <div class="food-icon">🍹</div>
+            <h3>Drinks & Desserts</h3>
+            <p>Discover refreshing sips and sweet treats worth trying</p>
+        </div>
+    </div>
+</section>
+
+<!--AI Result-->
+    {% if result %}
+<section class="result-section">
+    <div class="result-box">
+        <p class="result-label">TRAVELGUIDEAI RECOMMENDATION</p>
+        <h2>Your AI Travel Guide</h2>
+        <div class="result-content">
+            {{ result | safe }}
+        </div>
+        <hr>
+        <small>
+            <b>Data Context (Simulasi S3 Knowledge Base):</b>
+            {{ context }}
+        </small>
+    </div>
+</section>
+{% endif %}
+
+<!--Footer-->
+    <footer>
+        <p>
+            © 2026 TravelGuideAI · Go somewhere Make memories
+        </p>
+        <span>
+           Explore more <br> Stress less
+        </span>
+    </footer>
+
+<!--Splash Script-->
     <script>
-    setTimeout(function () {
-        document
-            .getElementById("splash-screen")
-            .classList.add("hidden");
-    }, 4000);
-</script>
+        setTimeout(function () {
+            document
+                .getElementById("splash-screen")
+                .classList.add("hidden");
+        }, 4000);
+    </script>
 </body>
 </html>

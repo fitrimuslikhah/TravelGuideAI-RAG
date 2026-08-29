@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelGuideAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/yogya.css') }}">
+</head>
+
+<body>
+<body class="destination-body">
+
+<nav class="navbar">
+    <div class="navbar-logo">🌍 Travel Guide AI</div>
+
+    <div class="navbar-menu">
+        <a href="/">Home</a>
+        <a href="/#destinations">Destinations</a>
+        <a href="/#accommodations">Accommodations</a>
+        <a href="/#food">Food</a>
+    </div>
+</nav>
+
+<section class="destination-hero">
+    <div class="destination-hero-content">
+        <h1>Yogyakarta</h1>
+        <span>Central Java</span>
+        <p>Chill vibes, local eats, and culture everywhere</p>
+    </div>
+</section>
+
+
+<section class="travel-section">
+    <div class="travel-section-header">
+        <p>TASTE INDONESIA</p>
+        <h2>Food in Yogya</h2>
+        <span>Taste the local eats Yogya is known for</span>
+    </div>
+
+    <div class="horizontal-cards">
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/gudeg.jpg') }}" alt="gudeg">
+            <div class="travel-card-content">
+                <h3>Gudeg</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/brongkos.jpg') }}" alt="brongkos">
+            <div class="travel-card-content">
+                <h3>Brongkos</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/sateklathak.jpg') }}" alt="sateklathak">
+            <div class="travel-card-content">
+                <h3>Sate Klathak</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/jadahtempe.jpg') }}" alt="jadahtempe">
+            <div class="travel-card-content">
+                <h3>Jadah Tempe</h3>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="travel-section destination-background">
+
+    <div class="travel-section-header">
+        <p>EXPLORE</p>
+        <h2>Explore in Yogyakarta</h2>
+        <span>Cool spots, hidden gems, and places worth the hype</span>
+    </div>
+
+    <div class="horizontal-cards">
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/malioboro.jpg') }}" alt="malioboro">
+            <div class="travel-card-content">
+                <h3>Malioboro</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/keratonjogja.jpg') }}" alt="keratonjogja">
+            <div class="travel-card-content">
+                <h3>Keraton Jogja</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/tamansari.jpg') }}" alt="tamansari">
+            <div class="travel-card-content">
+                <h3>Taman Sari</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/prambanan.jpg') }}" alt="prambanan">
+            <div class="travel-card-content">
+                <h3>Candi Prambanan</h3>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="travel-section">
+
+    <div class="travel-section-header">
+        <p>FIND YOUR STAY</p>
+        <h2>Where's Your Vibe?</h2>
+        <span>Pick a spot that matches your travel style</span>
+    </div>
+
+    <div class="horizontal-cards">
+
+        <div class="hotel-card">
+            <img src="{{ url_for('static', filename='images/malioboro.jpg') }}" alt="malioboro">
+            <div class="travel-card-content">
+                <h3>Malioboro</h3>
+                <p>Shopping & nightlife</p>
+            </div>
+        </div>
+
+        <div class="hotel-card">
+            <img src="{{ url_for('static', filename='images/prawirotaman.jpg') }}" alt="prawirotaman">
+            <div class="travel-card-content">
+                <h3>Prawirotaman</h3>
+                <p>Cafes & chill vibes</p>
+            </div>
+        </div>
+
+        <div class="hotel-card">
+            <img src="{{ url_for('static', filename='images/gunungkidul.jpg') }}" alt="gunungkidul">
+            <div class="travel-card-content">
+                <h3>Gunung Kidul</h3>
+                <p>Beaches & hidden gems</p>
+            </div>
+        </div>
+
+        <div class="hotel-card">
+            <img src="{{ url_for('static', filename='images/kaliurang.jpg') }}" alt="kaliurang">
+            <div class="travel-card-content">
+                <h3>kaliurang</h3>
+                <p>Nature & mountain escape</p>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+<section class="destination-ai">
+
+    <div class="destination-ai-content">
+        <h2>Discover Yogyakarta</h2>
+        <span>Culture, heritage, good eats, and unforgettable vibes</span>
+         <a 
+            href="https://en.wikipedia.org/wiki/Yogyakarta" 
+            target="_blank"
+            class="ai-button"
+        >
+            Learn More About Yogyakarta
+        </a>
+    </div>
+
+</section>
+
+
+<section class="destination-back">
+    <a href="/#destinations">Back to Destinations</a>
+</section>
+
+
+<footer>
+    <p>🌍 Travel Guide</p>
+</footer>
+
+</body>
+</html>

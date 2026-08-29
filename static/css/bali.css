@@ -1,0 +1,358 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.destination-body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    background:
+        linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)),
+        url("../images/bali.jpg") center/cover no-repeat;
+}
+
+/* ----- ESTINATION HERO ----- */
+
+.destination-hero {
+    min-height: 100vh;
+    padding: 150px 8% 100px;
+    display: flex;
+    align-items: center;
+    background: transparent;
+}
+
+.destination-hero-content {
+    max-width: 700px;
+}
+
+.destination-hero-content p:first-child {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.destination-hero h1 {
+    font-size: 5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.destination-hero span {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.destination-hero p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* ----- SECTION HEADER ----- */
+
+.travel-section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.travel-section-header p {
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: #d6e0e7;
+    margin-bottom: 10px;
+}
+
+.travel-section-header h2 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.travel-section-header span {
+    color: rgba(255, 255, 255, .8);
+}
+
+
+/* ----- TRAVEL SECTION ----- */
+
+.travel-section {
+    padding: 90px 8%;
+    background: rgba(0, 0, 0, .20);
+    color: white;
+}
+
+.destination-background {
+    background: rgba(0, 0, 0, .28);
+}
+
+
+/* ----- HORIZONTAL CARDS ----- */
+
+.horizontal-cards {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px 5px 20px;
+    scrollbar-width: thin;
+}
+
+.horizontal-cards::-webkit-scrollbar {
+    height: 8px;
+}
+
+.horizontal-cards::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, .5);
+    border-radius: 10px;
+}
+
+
+/* ----- ALL CARDS ----- */
+
+.travel-card,
+.hotel-card {
+    background: white;
+    color: #333;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .2);
+    transition: .3s;
+}
+
+.travel-card:hover,
+.hotel-card:hover {
+    transform: translateY(-6px);
+}
+
+
+/* ----- FOOD & DESTINATION CARD ----- */
+
+.travel-card {
+    width: 260px;
+    min-width: 260px;
+}
+
+
+/* ----- WHERE TO STAY CARD ----- */
+
+.hotel-card {
+    width: 280px;
+    min-width: 280px;
+}
+
+
+/* ----- CARD IMAGE ----- */
+
+.travel-card img,
+.hotel-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+
+/* ----- CARD CONTENT ----- */
+
+.travel-card-content {
+    height: 110px;
+    padding: 12px 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.travel-card-content h3 {
+    margin-bottom: 8px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.travel-card-content p {
+    color: #777;
+    line-height: 1.5;
+    text-align: center;
+}
+
+
+/* ----- AI SECTION ----- */
+
+.destination-ai {
+    padding: 60px 8%;
+    text-align: center;
+    background: rgba(36, 60, 70, .85);
+    color: white;
+}
+
+.destination-ai-content {
+    max-width: 600px;
+    margin: auto;
+}
+
+.destination-ai p {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.destination-ai h2 {
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+.destination-ai span {
+    display: block;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, .8);
+}
+
+.ai-button {
+    display: inline-block;
+    padding: 11px 18px;
+    background: white;
+    color: #355663;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.ai-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ----- BACK BUTTON ----- */
+
+.destination-back {
+    padding: 30px;
+    text-align: center;
+    background: rgba(0, 0, 0, .35);
+}
+
+.destination-back a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* ----- FOOTER ----- */
+
+footer {
+    padding: 30px;
+    text-align: center;
+    background: rgba(36, 60, 70, .95);
+    color: white;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+footer span {
+    font-size: 14px;
+    opacity: .7;
+}
+
+
+/* ----- MOBILE ----- */
+
+@media (max-width: 700px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        height: auto;
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .navbar-menu {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    /* HERO */
+
+    .destination-hero {
+        min-height: 85vh;
+        padding: 140px 6% 80px;
+    }
+
+    .destination-hero h1 {
+        font-size: 3rem;
+    }
+
+
+    /* SECTION */
+
+    .travel-section {
+        padding: 70px 6%;
+    }
+
+    .travel-section-header h2 {
+        font-size: 2rem;
+    }
+
+
+    /* CARDS */
+
+    .travel-card {
+        width: 240px;
+        min-width: 240px;
+    }
+
+    .hotel-card {
+        width: 240px;
+        min-width: 240px;
+    }
+
+
+    /* CARD IMAGE */
+
+    .travel-card img,
+    .hotel-card img {
+        height: 190px;
+    }
+
+
+    /* CARD CONTENT */
+
+    .travel-card-content {
+        height: 110px;
+        padding: 12px 15px;
+    }
+
+
+    /* AI */
+
+    .destination-ai {
+        padding: 70px 6%;
+    }
+
+    .destination-ai h2 {
+        font-size: 2rem;
+    }
+}

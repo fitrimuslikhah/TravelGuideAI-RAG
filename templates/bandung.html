@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelGuideAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bandung.css') }}">
+</head>
+
+<body>
+<body class="destination-body">
+
+<nav class="navbar">
+    <div class="navbar-logo">🌍 Travel Guide AI</div>
+
+    <div class="navbar-menu">
+        <a href="/">Home</a>
+        <a href="/#destinations">Destinations</a>
+        <a href="/#accommodations">Accommodations</a>
+        <a href="/#food">Food</a>
+    </div>
+</nav>
+<section class="destination-hero">
+    <div class="destination-hero-content">
+        <h1>Bandung</h1>
+        <span>West Java</span>
+        <p>Chill weather, good eats, and good vibes all around</p>
+    </div>
+</section>
+
+
+<section class="travel-section">
+
+    <div class="travel-section-header">
+        <p>TASTE INDONESIA</p>
+        <h2>Food in Bandung</h2>
+        <span>Go try these local food spots</span>
+    </div>
+
+    <div class="horizontal-cards">
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/batagor.jpg') }}" alt="Batagor">
+            <div class="travel-card-content">
+                <h3>Batagor</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/seblak.jpg') }}" alt="Seblak">
+            <div class="travel-card-content">
+                <h3>Seblak</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/surabi.jpg') }}" alt="Surabi">
+            <div class="travel-card-content">
+                <h3>Surabi</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/mie kocok.jpg') }}" alt="Mie Kocok">
+            <div class="travel-card-content">
+                <h3>Mie Kocok</h3>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="travel-section destination-background">
+
+    <div class="travel-section-header">
+        <p>EXPLORE</p>
+        <h2>Explore in Bandung </h2>
+        <span>The spots you literally can't miss</span>
+    </div>
+
+    <div class="horizontal-cards">
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/kawahputih.jpg') }}" alt="Kawah Putih">
+            <div class="travel-card-content">
+                <h3>Kawah Putih</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/braga.jpeg') }}" alt="Braga Street">
+            <div class="travel-card-content">
+                <h3>Braga Street</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/gedungsate.jpg') }}" alt="Gedung Sate">
+            <div class="travel-card-content">
+                <h3>Gedung Sate</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/lembang.webp') }}" alt="Lembang">
+            <div class="travel-card-content">
+                <h3>Lembang</h3>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="travel-section">
+
+    <div class="travel-section-header">
+        <p>FIND YOUR STAY</p>
+        <h2>Where's Your Vibe?</h2>
+        <span>Pick a spot that matches your travel style</span>
+    </div>
+
+    <div class="horizontal-cards">
+
+        <div class="hotel-card">
+            <img src="{{ url_for('static', filename='images/dago.jpg') }}" alt="dago">
+            <div class="travel-card-content">
+                <h3>Dago</h3>
+                <p>cafes & city views</p>
+            </div>
+        </div>
+
+        <div class="hotel-card">
+            <img src="{{ url_for('static', filename='images/lembang.webp') }}" alt="lembang">
+            <div class="travel-card-content">
+                <h3>Lembang</h3>
+                <p>nature & cool escapes</p>
+            </div>
+        </div>
+
+        <div class="hotel-card">
+            <img src="{{ url_for('static', filename='images/braga.jpeg') }}" alt="braga">
+            <div class="travel-card-content">
+                <h3>Braga</h3>
+                <p>heritage & city walks</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="destination-ai">
+
+    <div class="destination-ai-content">
+        <h2>Discover Bandung</h2>
+        <span>Cool vibes, good eats, and so much to explore</span>
+        <a 
+            href="https://en.wikipedia.org/wiki/Bandung" 
+            target="_blank"
+            class="ai-button"
+        >
+            Learn More About Bandung
+        </a>
+    </div>
+
+</section>
+
+
+<section class="destination-back">
+    <a href="/#destinations">Back to Destinations</a>
+</section>
+
+
+<footer>
+    <p>🌍 TravelGuideAI</p>
+</footer>
+
+</body>
+</html>

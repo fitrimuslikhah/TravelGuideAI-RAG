@@ -1,37 +1,90 @@
-# TravelGuideAI (Local RAG Project)
+# ✈️ TravelGuideAI
 
-## AWS Architecture Simulation
+## 💡 About the Project
 
-This project is a local simulation of an AWS based RAG (Retrieval Augmented Generation) architecture.
+TravelGuideAI is an AI-powered travel guide that helps users explore destinations and get personalized travel recommendations using Generative AI.
 
-The project demonstrates how several AWS services can be simulated locally using open source tools and Google Gemini API.
+## 🌐 Deployment
+Platform: DigitalOcean
+Server: Linux VPS
+Container: Docker & Docker Compose
 
-### Architecture Components
+## 📱 Features
+- Travel Destination
+- Destination Information
+- AI Recommendation
+- RAG
 
-- **AWS Bedrock**  
-  Simulated using **Google Gemini API (Google AI Studio)** with the `google-genai` SDK.
+## 🛡️ Test Command
+Test the application using
+pytest test_app.py
 
-- **Amazon S3 (Knowledge Base)**  
-  Simulated using local text files stored in the `/reviews` directory.
+![alt text](static/images/test.jpeg)
 
-- **Amazon S3 / CloudFront (Static Assets)**  
-  Simulated using the `/static` directory for images, CSS, and other static assets.
+## ⚛️ Tech Stack
 
-- **Amazon EC2 (Application Host)**  
-  Simulated by running the Flask application inside a **Docker container**.
+### 🤖 AI
+- Google Gemini API
+- Retrieval-Augmented Generation (RAG)
 
-- **Docker / Docker Compose**  
-  Used to containerize the Flask application and manage the application environment.
+### 🛠️ Development
+- Python
+- Flask
+- HTML
+- CSS
+- JavaScript
 
-- **CI/CD Pipeline**  
-  Planned using **GitHub Actions** for automated testing and deployment.
+### 🐳 DevOps
+- Docker
+- Docker Compose
+- Git
+- GitHub
+- Linux
 
-- **Observability**  
-  Implemented using **OpenTelemetry** and integrated with **Grafana Cloud** for application monitoring and telemetry.
+### 🔄 CI/CD
+- GitHub Actions
 
-## Local Development
+### 🛠️ Tools & Environment
+- VS Code
 
-Run the application using Docker Compose:
+## ✅ Requirements
+Things you need to run TravelGuideAI
+1. **Docker**
+2. **Docker Compose**
+3. **Google Gemini API Key**
 
-```bash
+## ☸️ Installation
+Follow these steps to run TravelGuideAI locally
+
+### 1. Clone the Repository
+https://github.com/fitrimuslikhah/TravelGuideAI-RAG.git
+
+### 2. Move to cloned Repository Folder
+cd TravelGuideAI-RAG
+
+### 3. Create the Environment File
+Create a `.env` file in the project root
+GEMINI_API_KEY=your_api_key
+
+### 4. Build and Run the Application
+Run the application using Docker Compose
 docker compose up --build
+
+### 5. Open the Application
+Once the container is running, open:
+```text
+http://localhost:5000
+```
+
+### 6. Stop the Application
+To stop the containers:
+```bash
+docker compose down
+```
+
+
+
+
+
+
+

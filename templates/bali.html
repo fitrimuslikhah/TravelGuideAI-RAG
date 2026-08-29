@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelGuideAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bali.css') }}">
+</head>
+
+<body>
+<body class="destination-body">
+
+<nav class="navbar">
+    <div class="navbar-logo">🌍 Travel Guide AI</div>
+
+    <div class="navbar-menu">
+        <a href="/">Home</a>
+        <a href="/#destinations">Destinations</a>
+        <a href="/#accommodations">Accommodations</a>
+        <a href="/#food">Food</a>
+    </div>
+</nav>
+
+<section class="destination-hero">
+    <div class="destination-hero-content">
+        <h1>Bali</h1>
+        <span>Indonesia</span>
+        <p>Dreamy beaches, island vibes, and so much to explore</p>
+    </div>
+</section>
+
+
+<section class="travel-section">
+
+    <div class="travel-section-header">
+        <p>TASTE INDONESIA</p>
+        <h2>Food in Bali</h2>
+        <span>Taste the authentic flavors of Bali</span>
+    </div>
+
+    <div class="horizontal-cards">
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/nasijinggo.jpg') }}" alt="nasijinggo">
+            <div class="travel-card-content">
+                <h3>Nasi Jinggo</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/ayambetutu.jpg') }}" alt="ayambetutu">
+            <div class="travel-card-content">
+                <h3>Ayam Betutu</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/laklak.jpg') }}" alt="laklak">
+            <div class="travel-card-content">
+                <h3>Laklak</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/lawar.webp') }}" alt="lawar">
+            <div class="travel-card-content">
+                <h3>Lawar</h3>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="travel-section destination-background">
+
+    <div class="travel-section-header">
+        <p>EXPLORE</p>
+        <h2>Explore in Bali</h2>
+        <span>Beautiful places you should not miss</span>
+    </div>
+
+    <div class="horizontal-cards">
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/kutabeach.jpg') }}" alt="Kutabeach">
+            <div class="travel-card-content">
+                <h3>Kuta Beach</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/ubud.jpg') }}" alt="ubud">
+            <div class="travel-card-content">
+                <h3>Ubud</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/farmhouse.webp') }}" alt="farmhouse">
+            <div class="travel-card-content">
+                <h3>Farm House</h3>
+            </div>
+        </div>
+
+        <div class="travel-card">
+            <img src="{{ url_for('static', filename='images/airterjuntegenungan.webp') }}" alt="airterjuntegenungan">
+            <div class="travel-card-content">
+                <h3>Tegenungan Fountain</h3>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="travel-section">
+
+    <div class="travel-section-header">
+        <p>FIND YOUR STAY</p>
+        <h2>Where's Your Vibe?</h2>
+        <span>Pick a spot that matches your travel style</span>
+    </div>
+
+    <div class="horizontal-cards">
+
+        <div class="hotel-card">
+            <img src="{{ url_for('static', filename='images/seminyak.jpg') }}" alt="seminyak">
+            <div class="travel-card-content">
+                <h3>Seminyak</h3>
+                <p>beach clubs & sunsets</p>
+            </div>
+        </div>
+
+        <div class="hotel-card">
+            <img src="{{ url_for('static', filename='images/ubud.jpg') }}" alt="ubud">
+            <div class="travel-card-content">
+                <h3>Ubud</h3>
+                <p>nature & culture</p>
+            </div>
+        </div>
+
+        <div class="hotel-card">
+            <img src="{{ url_for('static', filename='images/kutabeach.jpg') }}" alt="kutabeach">
+            <div class="travel-card-content">
+                <h3>Kuta</h3>
+                <p>beaches & nightlife</p>
+            </div>
+        </div>
+
+        <div class="hotel-card">
+            <img src="{{ url_for('static', filename='images/canggu.jpg') }}" alt="canggu">
+            <div class="travel-card-content">
+                <h3>Canggu</h3>
+                <p>cafes & surfing</p>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+<section class="destination-ai">
+
+    <div class="destination-ai-content">
+        <h2>Discover Bali</h2>
+        <span>Dreamy beaches, local eats, and unforgettable island vibes</span>
+         <a 
+            href="https://en.wikipedia.org/wiki/Bali" 
+            target="_blank"
+            class="ai-button"
+        >
+            Learn More About Bali
+        </a>
+    </div>
+
+</section>
+
+
+<section class="destination-back">
+    <a href="/#destinations">Back to Destinations</a>
+</section>
+
+
+<footer>
+    <p>🌍 Travel Guide</p>
+</footer>
+
+</body>
+</html>
