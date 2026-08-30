@@ -262,7 +262,10 @@ pyrightconfig.json
 # End of https://www.toptal.com/developers/gitignore/api/flask,python
 .env
 
-.terraform/
-*.tfstate
-*.tfstate.*
 WhatsApp Image 2026-08-29 at 20.56.14.jpeg
+
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/*.tfvars

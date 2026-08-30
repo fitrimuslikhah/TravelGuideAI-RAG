@@ -5,9 +5,13 @@
 TravelGuideAI is an AI-powered travel guide that helps users explore destinations and get personalized travel recommendations using Generative AI.
 
 ## 🌐 Deployment
-Platform: DigitalOcean
-Server: Linux VPS
-Container: Docker & Docker Compose
+Platform: DigitalOcean  
+Server: Linux VPS  
+Infrastructure as Code: Terraform  
+Containerization: Docker & Docker Compose
+
+## 🏗️ Infrastructure as Code
+Terraform is used to manage the DigitalOcean Droplet infrastructure as code
 
 ## 📱 Features
 - Travel Destination
@@ -37,6 +41,8 @@ pytest test_app.py
 ### 🐳 DevOps
 - Docker
 - Docker Compose
+- Terraform
+- DigitalOcean
 - Git
 - GitHub
 - Linux
