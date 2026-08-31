@@ -9,6 +9,7 @@ Platform: DigitalOcean
 Server: Linux VPS  
 Infrastructure as Code: Terraform  
 Containerization: Docker & Docker Compose
+Reverse Proxy: Nginx
 
 ## 🏗️ Infrastructure as Code
 Terraform is used to manage the DigitalOcean Droplet infrastructure as code
@@ -41,6 +42,7 @@ pytest test_app.py
 ### 🐳 DevOps
 - Docker
 - Docker Compose
+- Nginx
 - Terraform
 - DigitalOcean
 - Git
